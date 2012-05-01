@@ -13,7 +13,9 @@ Techniques have been dropped, mashed, altered and added to by myself to create a
 
 I have used a 'rounded' method for setting font sizes here, by default the browser is reset to 10px. (http://css-tricks.com/css-font-size/)
 
-I created CARMICHAELIZE.CSS because I'm frustrated with having to extend existing resets with the specifics of the way I work.
+I created CARMICHAELIZE.CSS because I'm frustrated with having to extend existing resets with the specifics of the way I work. 
+
+This version of the reset is aimed at reseting mobile websites and applications. Box-sizing has been applied throughout, mainly because its easier. 
 
 It hasn’t of yet been tested on a full build by myself and may still contain underlying issues and bugs, yet to be addressed.
 
@@ -22,31 +24,30 @@ Scott Carmichael - http://www.scottcarmichael.co.uk/
 =============================================================================================================================================*/
 
 
+
 /* Main Element Reset
 =========================================================================================================================*/
 
-/* Fixes main reset issues on most tags */
+/* Fixes main reset issues on most tags (box Sizing as a trial at present) */
 
-html, body, div, span, article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, applet, object, iframe, img,
+html, body, div, span, article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, object, iframe, img,
 audio, canvas, video, dl, dt, dd, ol, ul, li, figure, form, fieldset, legend, label, table, caption, tbody, tfoot,
-thead, tr, th, td, p, pre, a, abbr, acronym, address, big, small, cite, code, q, blockquote, strike, del, b, strong, i, em, sub, sup,
+thead, tr, th, td, p, pre, a, abbr, acronym, address, big, small, cite, code, q, blockquote, strike, del, b, strong, i, em, sub, sup, 
 h1, h2, h3, h4, h5, h6 {
     background: none;
     border: none;
-    outline:none;
     vertical-align: baseline;
+    -moz-box-sizing: border-box; /* Unsupported in Firefox minus prefix */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-html, body, div, article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, applet, object, iframe,
-audio, canvas, video, dl, dt, dd, ol, ul, li, figure, form, fieldset, legend, table, caption, tbody, tfoot,thead, tr, th, td, 
-p, pre, q, blockquote, h1, h2, h3, h4, h5, h6 {
+html, body, div, article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, object, iframe,
+audio, canvas, video, dl, dt, dd, ol, ul, li, figure, form, fieldset, legend, table, caption, tbody, tfoot,thead, tr, th, td,
+p, pre, q, blockquote, 
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
-}
-
-/* Used mainly for horizon hack (likely to be dropped) */
-html, body {
-    min-height:100%;
 }
 
 /* Prevents iOS text size adjust after orientation change, without disabling user zoom (www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/) */
@@ -57,7 +58,7 @@ html {
     font-size:62.5%; /* Reset for multiples of 10px */
 }
 
-/* HTML5 Resets & Fixes  
+/* HTML5 Resets & Fixes
 =========================================================================================================================*/
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
@@ -67,16 +68,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 /* Links & Anchors
 =========================================================================================================================*/
 
-a { 
+a {
     color:#000;
     text-decoration:none;
-    outline:none;
 }
 
-/* Heading Tags  
+/* Heading Tags
 =========================================================================================================================*/
 
-/* Resets all margin and padding values & Sets suitable pixels size hierarchy */
+/* Sets suitable pixels size hierarchy */
 
 h1, h2, h3, h4, h5, h6 {
     margin-bottom:10px;
@@ -106,11 +106,11 @@ h6 {
     font-size: 1.4em;
 }
 
-/* Text Formatting   
+/* Text Formatting
 =========================================================================================================================*/
 
-p, pre{
-    margin-bottom:15px;
+p, pre {
+    margin-bottom:10px;
 }
 
 pre {
@@ -119,7 +119,7 @@ pre {
     word-wrap: break-word;
 }
 
-/* Addresses style set to 'bolder' in FF3+, S4/5, Chrome */
+/* Fixes style set to 'bolder' in FF3+, S4/5, Chrome */
 
 b, strong {
     font-weight: bold;
@@ -143,22 +143,12 @@ abbr[title], acronym {
     border-bottom: 1px dotted;
 }
 
-/* Addresses styling not present in IE6/7/8/9 */
-
-mark {
-    background: #ff0;
-    color: #000;
-}
-
 del, strike {
     text-decoration: line-through;
 }
 
-/* Corrects font family set oddly in IE6, S4/5, Chrome (en.wikipedia.org/wiki/User:Davidgothberg/Test59) */
-
 pre, code, .codeBlock {
     font-family: monospace, serif;
-    _font-family: 'courier new', monospace;
 }
 
 /* Improves readability of pre-formatted text in all browsers */
@@ -193,7 +183,7 @@ sub {
     bottom: -2px;
 }
 
-/* Lists  & Organisation
+/* Lists & Organisation
 =========================================================================================================================*/
 
 /* Primarily for use in content */
@@ -218,7 +208,7 @@ hr {
     padding:0;
 }
 
-/* Form Resets & Fixes 
+/* Form Resets & Fixes
 =========================================================================================================================*/
 
 fieldset {
@@ -226,19 +216,10 @@ fieldset {
     padding:15px;
 }
 
-/* Corrects text not wrapping in FF3 & alignment displayed oddly in IE6/7 */
-
-legend {
-    white-space: normal;
-    *margin-left: -7px;
-}
-
 /* Improves appearance and consistency in all browsers. Will affect browser validation and highlighting. */
  
 button, input, select, textarea {
     font-family: sans-serif;
-    *vertical-align: middle;
-    outline:none;
 }
 
 /* Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet */
@@ -255,12 +236,11 @@ textarea {
     resize:none;
 }
 
-/* Corrects inability to style clickable 'input' types in iOS & Removes inner spacing in IE7 without affecting normal text inputs (Known issue: inner spacing remains in IE6) */
+/* Corrects inability to style clickable 'input' types in iOS */
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
     cursor: pointer;
     -webkit-appearance: button;
-    *overflow: visible;
 }
 
 /* Re-set default cursor for disabled elements */
@@ -274,8 +254,6 @@ button[disabled], input[disabled] {
 input[type="checkbox"], input[type="radio"] {
     box-sizing: border-box;
     padding: 0;
-    *height: 13px;
-    *width: 13px;
 }
 
 /* Addresses appearance set to searchfield in S5, Chrome Addresses & box-sizing set to border-box in S5, Chrome (include -moz to future-proof) */
@@ -293,22 +271,14 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     -webkit-appearance: none;
 }
 
-/* Removes inner padding and border in FF3+ (www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons) */
 
-button::-moz-focus-inner, input::-moz-focus-inner {
-    border: none;
-    padding: 0;
-}
-
-/* Embedded / Rich Media & Content  
+/* Embedded / Rich Media & Content
 =========================================================================================================================*/
 
-/* Corrects inline-block display not defined in IE6/7/8/9 & FF3 */
+/* Corrects inline-block display not defined in FF3 */
 
 audio, canvas, video {
     display: inline-block;
-    *display: inline;
-    *zoom: 1;
 }
 
 /* Prevents modern browsers from displaying 'audio' without controls & Remove excess height in iOS5 devices */
@@ -324,19 +294,13 @@ audio:not([controls]) {
     display: none;
 }
 
-/* Improves image quality when scaled in IE7 (code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/) */
-
-img {
-    -ms-interpolation-mode: bicubic;
-}
-
 /* Corrects overflow displayed oddly in IE9 */
 
 svg:not(:root) {
     overflow: hidden;
 }
 
-/* Tables  
+/* Tables
 =========================================================================================================================*/
 
 table {
@@ -346,35 +310,4 @@ table {
 
 td {
     vertical-align:top;
-}
-
-/* Hooking Classes  
-=========================================================================================================================*/
-
-.clear {
-    clear:both;
-}
-
-.alignleft {
-    float:left;
-}
-
-.alignright {
-    float:right;
-}
-
-.displayHide {
-    display:none;
-}
-
-.displayShow {
-    display:block;
-}
-
-.invisible {
-    visibility:hidden;
-}
-
-.visible {
-    visibility:visible;
 }
