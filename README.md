@@ -16,6 +16,6 @@ I have used a 'rounded' method for setting font sizes here, by default the brows
 
 I created CARMICHAELIZE.CSS because I'm frustrated with having to extend existing resets with the specifics of the way I work.
 
-It hasn’t of yet been tested on a full build by myself and may still contain underlying issues and bugs, yet to be addressed.
+It hasn’t of yet been tested on a full build by myself and may still contain underlying issues, yet to be addressed.
 
 Scott Carmichael - http://www.scottcarmichael.co.uk/

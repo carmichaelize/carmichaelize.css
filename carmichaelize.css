@@ -1,4 +1,4 @@
-/* CARMICHAELIZE_MOBILE.CSS - VERSION 1.0 - https://github.com/scottyc1000/carmichaelize.css - I'LL DECIDE WHAT THE BROWSER RENDERS!!!
+/* CARMICHAELIZE.CSS - VERSION 1.0 - https://github.com/scottyc1000/carmichaelize.css - I'LL DECIDE WHAT THE BROWSER RENDERS!!!
 ===============================================================================================================================================
 
 This reset is a collection (and extension) of commonly used methods found in other css resets such as:
@@ -15,7 +15,7 @@ I have used a 'rounded' method for setting font sizes here, by default the brows
 
 I created CARMICHAELIZE.CSS because I'm frustrated with having to extend existing resets with the specifics of the way I work.
 
-It hasn’t of yet been tested on a full build by myself and may still contain underlying issues and bugs, yet to be addressed.
+It hasn’t of yet been tested on a full build by myself and may still contain underlying issues, yet to be addressed.
 
 Scott Carmichael - http://www.scottcarmichael.co.uk/
 
@@ -164,16 +164,17 @@ pre, code, .codeBlock {
 /* Improves readability of pre-formatted text in all browsers */
 
 blockquote {
-    margin:13px 30px;
+    margin:0 30px 15px 30px;
 }
 
 /* Addresses CSS quotes not supported in IE6/7 & Addresses quote property not supported in S4 */
 
-q {
+blockquote, q {
     quotes: none;
+    font-style:italic;
 }
 
-q:before, q:after {
+blockquote:before, blockquote:after, q:before, q:after {
     content: '"';
 }
 
@@ -202,6 +203,15 @@ ul, ol, dl {
     list-style-image: none;
     list-style-position:inside;
     padding-left:30px;
+    margin-bottom:15px;
+}
+
+ul {
+   list-style-type:disc;  
+}
+
+ol {
+   list-style-type:decimal;  
 }
 
 nav ul, nav ol {
