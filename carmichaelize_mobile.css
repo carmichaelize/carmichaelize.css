@@ -1,4 +1,4 @@
-/* CARMICHAELIZE_MOBILE.CSS - VERSION 1.0 - https://github.com/scottyc1000/carmichaelize.css - I'LL DECIDE WHAT THE BROWSER RENDERS!!!
+/* CARMICHAELIZE_MOBILE.CSS - VERSION 1.1 - https://github.com/scottyc1000/carmichaelize.css - I'LL DECIDE WHAT THE BROWSER RENDERS!!!
 ===============================================================================================================================================
 
 This reset is a collection (and extension) of commonly used methods found in other css resets such as:
@@ -18,8 +18,6 @@ I created CARMICHAELIZE.CSS because I'm frustrated with having to extend existin
 This version of the reset is aimed at reseting mobile websites and applications. Box-sizing has been applied throughout, mainly because its easier.
 
 I also hope to acheive a more modern makeup of the mobile reset by taking advantage of new methods and techniques that are unavailable in older web browsers.
-
-It hasn’t of yet been tested on a full build by myself and may still contain underlying issues, yet to be addressed.
 
 Scott Carmichael - http://www.scottcarmichael.co.uk/
 
